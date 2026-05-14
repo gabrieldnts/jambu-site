@@ -644,49 +644,147 @@ video {
     object-fit: cover;
 
     border: 2px inset #808080;
+
+    background: white;
 }
 
 .chat-name {
     margin: 0;
+
     font-weight: bold;
+
+    color: #004a99;
 }
 
 .chat-status {
-    margin: 0;
-    color: green;
+    margin: 2px 0 0 0;
+
     font-size: 12px;
+
+    color: green;
 }
+
+/* BALÃO MSN */
 
 .chat-message {
-    background: white;
+    position: relative;
 
-    border: 2px inset #808080;
+    background: #dbeeff;
 
-    padding: 10px;
+    border: 1px solid #7aa7d9;
 
-    margin-bottom: 10px;
+    border-radius: 14px;
+
+    padding: 12px 14px;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        inset 1px 1px white;
 
     font-size: 13px;
+
+    line-height: 1.5;
 }
+
+/* PONTA DO BALÃO */
+
+.chat-message::before {
+    content: "";
+
+    position: absolute;
+
+    top: 14px;
+    left: -8px;
+
+    width: 0;
+    height: 0;
+
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #dbeeff;
+}
+
+/* BOTÃO */
 
 .chat-button {
     display: block;
 
     text-align: center;
 
-    padding: 8px;
+    background: linear-gradient(
+        to bottom,
+        #4ea3ff,
+        #0066cc
+    );
 
-    background: #c0c0c0;
+    color: white;
 
-    border: 2px outset white;
+    text-decoration: none;
+
+    font-weight: bold;
+
+    padding: 10px;
+
+    border:
+        2px outset #ffffff;
+
+    font-size: 12px;
+}
+
+.chat-button:hover {
+    filter: brightness(1.1);
+}
+
+.chat-button:active {
+    border:
+        2px inset #ffffff;
+}
+
+.chat-message,
+.chat-name,
+.chat-status,
+.chat-button,
+.mini-window-header {
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+
+
+.folder-download {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
 
     text-decoration: none;
 
     color: black;
 
-    font-weight: bold;
+    background: white;
+
+    border: 2px inset #808080;
+
+    padding: 10px;
+
+    margin-top: 10px;
+
+    font-family: Tahoma, Arial, sans-serif;
+
+    transition: 0.1s;
 }
 
-.chat-button:active {
-    border: 2px inset white;
+.folder-download:hover {
+    background: #dbeeff;
 }
+
+.folder-download img {
+    width: 32px;
+    height: 32px;
+
+    image-rendering: pixelated;
+}
+
+.folder-download span {
+    font-size: 12px;
