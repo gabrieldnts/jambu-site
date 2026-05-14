@@ -453,39 +453,86 @@ header {
 
 /*SITE ACAO DIVULGACAO*/
 
-/*MP3 PLAYER*/
-
-.mp3-player {
-    width: 320px;
-    margin: auto;
-    background: #c0c0c0;
-    border: 3px inset #808080;
-    padding: 10px;
-    text-align: center;
-    font-family: Arial;
-}
-
-.mp3-screen {
-    background: black;
-    color: #00ff00;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 12px;
-}
-
-.mp3-controls {
+.audio-layout {
     display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* ÁUDIOS */
+.audio-column {
+    flex: 2;
+    min-width: 0;
+}
+
+/* VÍDEO */
+.video-column {
+    flex: 1;
+    min-width: 0;
+}
+
+/* evita estouro dos players */
+.music-player {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* responsivo */
+@media (max-width: 900px) {
+    .audio-layout {
+        flex-direction: column;
+    }
+}
+
+
+/*VIDEOCLIPE*/
+
+video {
+    border: 1px inset #808080;
+    background: black;
+}
+
+/*POPUP LOGIN - EP*/
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+    z-index: 9999;
 }
 
-.mp3-controls button {
+.popup-window {
+    width: 320px;
     background: #c0c0c0;
-    border: 2px outset white;
-    padding: 5px 10px;
-    cursor: pointer;
+    border: 2px solid black;
+    box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
+    font-family: 'Courier New', monospace;
 }
 
-.mp3-controls button:active {
-    border: 2px inset white;
+.popup-header {
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-content {
+    padding: 15px;
+    font-size: 13px;
+    color: black;
+}
+
+.popup-button {
+    width: 100%;
+    padding: 8px;
+    border: 2px outset white;
+    background: #c0c0c0;
+    cursor: pointer;
 }

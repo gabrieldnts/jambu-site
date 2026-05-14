@@ -61,70 +61,165 @@
 
             </div>
 
+          
+
         </aside>
 
         <!-- CONTENT -->
         <main id="content">
 
-            <section class="window">
+                    <section class="window">
 
-                <div class="window-header">
-                    <span>Cartas_que_escrevi_enquanto_sonhava.zip</span>
-                </div>
+                        <div class="window-header">
+                            <span>Cartas_que_escrevi_enquanto_sonhava.zip</span>
+                        </div>
 
-                <div class="window-content">
+                        <div class="window-content audio-layout">
 
-                    <div class="music-player">
-                        <p>faixa_01 - Me Deixe Estar</p>
-                        <audio controls>
-                            <source src="./audio/01 JMB_MeDeixeEstar_MASTER.mp3.mpeg" type="audio/mpeg">
-                        </audio>
-                    </div>
+                            <!-- ÁUDIOS -->
+                            <div class="audio-column">
 
-                    <div class="music-player">
-                        <p>faixa_02 - Desculpa</p>
-                        <audio controls>
-                            <source src="./audio/04 JMB_Desculpa_MASTER.mp3.mpeg" type="audio/mpeg">
-                        </audio>
-                    </div>
+                                <div class="music-player">
+                                    <p>faixa_01 - Me Deixe Estar</p>
+                                    <audio controls>
+                                        <source src="./audio/01 JMB_MeDeixeEstar_MASTER.mp3.mpeg" type="audio/mpeg">
+                                    </audio>
+                                </div>
 
-                    <div class="music-player">
-                        <p>faixa_03 - Invisível</p>
-                        <audio controls>
-                            <source src="./audio/03 JMB_Invisível_Master.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
+                                <div class="music-player">
+                                    <p>faixa_02 - Desculpa</p>
+                                    <audio controls>
+                                        <source src="./audio/04 JMB_Desculpa_MASTER.mp3.mpeg" type="audio/mpeg">
+                                    </audio>
+                                </div>
 
-                    <div class="music-player">
-                        <p>faixa_04 - Desconectou</p>
-                        <audio controls>
-                            <source src="./audio/02 JMB_Desconectou_MASTER.mp3.mpeg" type="audio/mpeg">
-                        </audio>
-                    </div>
+                                <div class="music-player">
+                                    <p>faixa_03 - Invisível</p>
+                                    <audio controls>
+                                        <source src="./audio/03 JMB_Invisível_Master.mp3" type="audio/mpeg">
+                                    </audio>
+                                </div>
 
-                    <div class="music-player">
-                        <p>faixa_05 - Carne e Osso</p>
-                        <audio controls>
-                            <source src="./audio/05 JMB_VejaVoce_MASTER.mp3.mpeg" type="audio/mpeg">
-                        </audio>
-                    </div>
+                                <div class="music-player">
+                                    <p>faixa_04 - Desconectou</p>
+                                    <audio controls>
+                                        <source src="./audio/02 JMB_Desconectou_MASTER.mp3.mpeg" type="audio/mpeg">
+                                    </audio>
+                                </div>
 
-                </div>
+                                <div class="music-player">
+                                    <p>faixa_05 - Carne e Osso</p>
+                                    <audio controls>
+                                        <source src="./audio/05 JMB_VejaVoce_MASTER.mp3.mpeg" type="audio/mpeg">
+                                    </audio>
+                                </div>
+
+                            </div>
+
+                            <!-- VÍDEO -->
+                            <div class="video-column">
+
+                                <div class="mini-window">
+
+                                    <div class="mini-window-header">
+                                        <span></span>
+                                    </div>
+
+                                    <div class="mini-window-content">
+
+                                        <video autoplay muted loop playsinline style="
+                                            width: 100%;
+                                            border: 1px inset #808080;
+                                            background: black;
+                                        ">
+                                            <source src="./imgs/03_INVISÍVEL CANVA 8S SEM LETTERING.mp4" type="video/mp4">
+                                        </video>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
 
             </section>
+                      <div class="window" style="margin-top: 20px;">
+
+                                    <div class="window-header">
+                                        <span>DESCONECTOU_CLIPE.mp4</span>
+                                    </div>
+
+                                    <div class="window-content">
+
+                                        <video width="100%" controls>
+                                            <source src="./imgs/" type="video/mp4">
+                                            Seu navegador não suporta vídeo.
+                                        </video>
+
+                                    </div>
+
+                                </div>
+
+
 
         </main>
+
 
     </div>
 
 </div>
 
+<!-- POP UP  -->
+                <div id="popup" class="popup">
+                    <div class="popup-window">
+                        <div class="popup-header">
+                            <span>BEM-VIND@ AO ARQUIVO SECRETO.zip</span>
+                            <button onclick="closePopup()">X</button>
+                        </div>
+
+                        <div class="popup-content">
+                            <p><b>Cartas que escrevi enquanto sonhava</b></p>
+                            <p>Esse acesso é muito restrito, criado apenas para nossa comunidade</p>
+                            <p class="blink">▶ APROVEITE</p>
+                        </div>
+
+                        <button class="popup-button" onclick="closePopup()">OK</button>
+                    </div>
+                </div>
+
+                <!-- SOM -->
+                <audio id="openSound">
+                    <source src="./audio/boot-sound.mp3" type="audio/mpeg">
+                </audio>
 <script>
 /* LOGIN CHECK */
 if (sessionStorage.getItem("accessGranted") !== "true") {
     window.location.href = "index.html";
 }
-</script>
 
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+window.addEventListener("load", () => {
+
+    if (sessionStorage.getItem("accessGranted") === "true") {
+
+        const popup = document.getElementById("popup");
+        const sound = document.getElementById("openSound");
+
+        setTimeout(() => {
+            popup.style.display = "flex";
+            sound.play();
+        }, 600);
+
+    } else {
+        window.location.href = "index.html";
+    }
+
+});
+</script>
 </body>
 </html>
