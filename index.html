@@ -277,26 +277,27 @@ body {
 
 function login() {
 
+
+
+    document.getElementById('errorMessage').style.display = 'none';
+    const username =
+        document.getElementById('username').value;
+
     const password =
         document.getElementById('password').value;
 
-    const correctPassword =
-        "cartas";
+    const correctUsername = "jambu";
+    const correctPassword = "cartas";
 
-    if(password === correctPassword) {
+    if (username === correctUsername && password === correctPassword) {
 
-        sessionStorage.setItem(
-    "accessGranted",
-    "true"
-);
+        sessionStorage.setItem("accessGranted", "true");
 
-        window.location.href =
-            "ep.html";
+        window.location.href = "ep.html";
+
     } else {
 
-        document.getElementById(
-            'errorMessage'
-        ).style.display = 'block';
+        document.getElementById('errorMessage').style.display = 'block';
 
     }
 
