@@ -277,9 +277,12 @@ body {
 
 function login() {
 
+    const errorBox =
+        document.getElementById('errorMessage');
 
+    // esconde erro ao tentar de novo
+    errorBox.style.display = 'none';
 
-    document.getElementById('errorMessage').style.display = 'none';
     const username =
         document.getElementById('username').value;
 
@@ -289,17 +292,35 @@ function login() {
     const correctUsername = "jambu";
     const correctPassword = "cartas";
 
-    if (username === correctUsername && password === correctPassword) {
+    // simula "processando sistema"
+    const button =
+        document.querySelector('.login-button');
 
-        sessionStorage.setItem("accessGranted", "true");
+    button.innerText = "VERIFICANDO...";
+    button.disabled = true;
 
-        window.location.href = "ep.html";
+    setTimeout(() => {
 
-    } else {
+        if (username === correctUsername && password === correctPassword) {
 
-        document.getElementById('errorMessage').style.display = 'block';
+            button.innerText = "ACESSO LIBERADO";
 
-    }
+            sessionStorage.setItem("accessGranted", "true");
+
+            setTimeout(() => {
+                window.location.href = "ep.html";
+            }, 600);
+
+        } else {
+
+            button.innerText = "ENTRAR";
+            button.disabled = false;
+
+            errorBox.style.display = 'block';
+
+        }
+
+    }, 800);
 
 }
 
