@@ -68,12 +68,6 @@ header {
     width: 220px;
 
     flex-shrink: 0;
-
-    background: white;
-
-    border: 3px inset black;
-
-    padding: 15px;
 }
 
 #sidebar h2 {
@@ -207,6 +201,21 @@ header {
 
 .window-content {
     padding: 15px;
+}
+
+.tiktok-window {
+    margin-top: 20px;
+
+    overflow: hidden;
+}
+
+.tiktok-window .mini-window-content {
+    padding: 10px;
+
+    overflow: hidden;
+}
+.tiktok-window iframe {
+    border: none;
 }
 
 /* CAROUSEL */
@@ -345,4 +354,138 @@ header {
     .merch-item {
         width: 100%;
     }
+}
+
+/* MINI WINDOW */
+
+.mini-window {
+    margin-top: 25px;
+
+    background: #c0c0c0;
+
+    border: 3px solid black;
+
+    box-shadow:
+        inset -2px -2px #808080,
+        inset 2px 2px #ffffff;
+}
+
+.mini-window-header {
+    background: linear-gradient(to right, #000080, #1084d0);
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 4px 6px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.mini-window-buttons {
+    display: flex;
+
+    gap: 3px;
+}
+
+.mini-btn {
+    width: 16px;
+    height: 16px;
+
+    background: #c0c0c0;
+
+    border: 2px outset white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 10px;
+
+    color: black;
+
+    font-family: Arial;
+}
+
+.mini-btn.close {
+    color: darkred;
+}
+
+.mini-window-content {
+    background: white;
+
+    padding: 10px;
+
+    color: black;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+/* BLINK */
+
+.blink {
+    color: red;
+
+    font-weight: bold;
+
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
+
+}
+
+
+
+/*SITE ACAO DIVULGACAO*/
+
+/*MP3 PLAYER*/
+
+.mp3-player {
+    width: 320px;
+    margin: auto;
+    background: #c0c0c0;
+    border: 3px inset #808080;
+    padding: 10px;
+    text-align: center;
+    font-family: Arial;
+}
+
+.mp3-screen {
+    background: black;
+    color: #00ff00;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.mp3-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mp3-controls button {
+    background: #c0c0c0;
+    border: 2px outset white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.mp3-controls button:active {
+    border: 2px inset white;
 }

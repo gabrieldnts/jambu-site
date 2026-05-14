@@ -1,258 +1,321 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<title>Jambu.zip</title>
 
-<link rel="stylesheet" href="style.css">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CARTAS_LOGIN.EXE</title>
+
+<style>
+
+/* RESET */
+
+* {
+    box-sizing: border-box;
+}
+
+/* BODY */
+
+body {
+    margin: 0;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("./imgs/10.png");
+
+    background-size: cover;
+    background-position: center;
+
+    font-family: 'Courier New', monospace;
+}
+
+/* LOGIN WINDOW */
+
+.login-window {
+    width: 420px;
+
+    background: #c0c0c0;
+
+    border: 3px solid black;
+
+    box-shadow:
+        inset -2px -2px #808080,
+        inset 2px 2px #ffffff;
+}
+
+/* HEADER */
+
+.login-header {
+    background: linear-gradient(to right, #000080, #1084d0);
+
+    color: white;
+
+    padding: 6px 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+/* WINDOW BUTTONS */
+
+.window-buttons {
+    display: flex;
+
+    gap: 4px;
+}
+
+.window-btn {
+    width: 16px;
+    height: 16px;
+
+    background: #c0c0c0;
+
+    border: 2px outset white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: black;
+
+    font-size: 10px;
+
+    font-family: Arial;
+}
+
+.window-btn.close {
+    color: darkred;
+}
+
+/* CONTENT */
+
+.login-content {
+    padding: 25px;
+
+    text-align: center;
+}
+
+/* LOGO */
+
+.login-logo {
+    width: 220px;
+
+    max-width: 100%;
+
+    margin-bottom: 10px;
+
+    image-rendering: pixelated;
+}
+
+/* SUBTEXT */
+
+.login-subtitle {
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+    color: #333;
+}
+
+/* INPUTS */
+
+.login-input {
+    width: 100%;
+
+    margin-bottom: 15px;
+
+    padding: 10px;
+
+    border: 2px inset #808080;
+
+    background: white;
+
+    font-family: 'Courier New', monospace;
+
+    font-size: 14px;
+}
+
+/* BUTTON */
+
+.login-button {
+    width: 100%;
+
+    padding: 10px;
+
+    background: #c0c0c0;
+
+    border: 2px outset white;
+
+    cursor: pointer;
+
+    font-family: 'Courier New', monospace;
+
+    font-weight: bold;
+}
+
+.login-button:active {
+    border: 2px inset white;
+}
+
+/* ERROR */
+
+.error-message {
+    margin-top: 15px;
+
+    color: red;
+
+    font-size: 13px;
+
+    display: none;
+}
+
+/* BLINK */
+
+.blink {
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<div id="container">
+<div class="login-window">
 
-    <header>
-        <img class="logo" src="./imgs/Lettering jambu (1).png" alt="Jambu">
+    <!-- HEADER -->
 
-        <p>
-            otimizado para internet explorer 4.0
+    <div class="login-header">
+
+        <span>CARTAS_LOGIN.EXE</span>
+
+        <div class="window-buttons">
+
+            <div class="window-btn">_</div>
+
+            <div class="window-btn">□</div>
+
+            <div class="window-btn close">X</div>
+
+        </div>
+
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="login-content">
+
+        <img
+            class="login-logo"
+            src="./imgs/janela 09.png"
+            alt="Jambu">
+
+        <p class="login-subtitle">
+
+            PÁGINA SECRETA<br>
+
+            Digite a senha para entrar
+
         </p>
-    </header>
 
-    <div id="layout">
+        <input
+            type="text"
+            id="username"
+            class="login-input"
+            placeholder="nome de usuário">
 
-        <!-- MENU LATERAL -->
+        <input
+            type="password"
+            id="password"
+            class="login-input"
+            placeholder="senha">
 
-        <aside id="sidebar">
+        <button
+            class="login-button"
+            onclick="login()">
 
-            <h2>Redes</h2>
+            ENTRAR
 
-            <a class="social-link" href="https://www.instagram.com/oficialjambu/" target="_blank">
-                Instagram
-            </a>
+        </button>
 
-            <a class="social-link" href="https://open.spotify.com/intl-pt/artist/5cKYzOJ8HSM7eKSP3FkvVX?si=CWNqVKlKT4i4MZ5UMTbSVQ"target="_blank">
-                Spotify
-            </a>
+        <div
+            class="error-message blink"
+            id="errorMessage">
 
-            <a class="social-link" href="https://www.youtube.com/channel/UCouGneqV9PM4AgMaC2odRZQ"target="_blank">
-                YouTube
-            </a>
+            acesso negado
 
-            <a class="social-link" href="https://www.tiktok.com/@oficialjambu"target="_blank">
-                TikTok
-            </a>
-
-        </aside>
-
-        <!-- CONTEÚDO -->
-
-        <main id="content">
-
-            <!-- SPOTIFY -->
-
-            <section class="section spotify">
-
-                <h2>Spotify</h2>
-
-                <iframe
-                    style="border-radius:12px"
-                    src="https://open.spotify.com/embed/track/0eYhsqk8WYzwjI5EEiKHL8"
-                    width="100%"
-                    height="352"
-                    frameborder="0"
-                    allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy">
-                </iframe>
-            </section>
-
-            <!-- YOUTUBE -->
-
-            <section class="section youtube">
-
-                <h2>Último Vídeo</h2>
-
-                <iframe
-                    width="100%"
-                    height="400"
-                    src="https://www.youtube.com/embed/OD99f19gSyk"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </section>
-
-            <!-- MERCH -->
-
-                        <section class="window">
-
-                                        <div class="window-header">
-
-                                            <span>JAMBU_MERCH.EXE</span>
-
-                                            <div class="window-buttons">
-                                                <div class="window-btn">_</div>
-                                                <div class="window-btn">□</div>
-                                                <div class="window-btn close">X</div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="window-content">
-
-                                            <h2>Merch</h2>
-
-                                            <div class="carousel-wrapper">
-
-                                                <button class="carousel-btn" id="prevBtn">
-                                                    ◀
-                                                </button>
-
-                                                <div class="carousel-container">
-
-                                                    <div class="merch-grid">
-
-                                                        <!-- ITEM -->
-
-                                                        <div class="merch-item">
-                                                            <a href="https://heartmerch.com.br/products/jambu-camiseta-branca-fdc" target="_blank">
-                                                                <img src="./imgs/JAMBUFDCOFW01.webp">
-                                                                <p>Camiseta FDC</p>
-                                                                <p>R$ 109,90</p>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="merch-item">
-                                                            <a href="https://heartmerch.com.br/products/jambu-bottom-modelo-1" target="_blank">
-                                                                <img src="./imgs/JAMBULOGOBOTTOM01.webp">
-                                                                <p>Bottom</p>
-                                                                <p>R$ 7,90</p>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="merch-item">
-                                                            <a href="https://heartmerch.com.br/products/jambu-poster-manauero" target="_blank">
-                                                                <img src="./imgs/poster_jambu.webp">
-                                                                <p>Poster MANAUERO</p>
-                                                                <p>R$ 30,00</p>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="merch-item">
-                                                            <a href="https://heartmerch.com.br/products/jambu-tote-bag-preta-tudo-e-mt-distante" target="_blank">
-                                                                <img src="./imgs/JAMBUDISTANTEECOBAG02.webp">
-                                                                <p>Tote Bag - Tudo é mt distante</p>
-                                                                <p>R$ 59,90</p>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="merch-item">
-                                                            <a href="https://heartmerch.com.br/products/jambu-shorts-logo" target="_blank">
-                                                                <img src="./imgs/JAMBULOGOSHORTSBCO01_1adf27d9-593f-4909-a9e3-eb25f765cc6f.webp">
-                                                                <p>Short Jambu</p>
-                                                                <p>R$ 99,90</p>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="merch-item">
-                                                            <a href="https://heartmerch.com.br/products/jambu-moletom-canguru-preto-logo" target="_blank">
-                                                                <img src="./imgs/JAMBULOGOMOLETOMPTO01_8953cb43-6024-466e-a084-39d691a52b1c.webp">
-                                                                <p>Moletom Jambu</p>
-                                                                <p>R$ 249,90</p>
-                                                            </a>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <button class="carousel-btn" id="nextBtn">
-                                                    ▶
-                                                </button>
-
-                                            </div>
-
-                                        </div>
-
-                        </section>
-            <!-- INGRESSOS -->
-
-            <section class="section">
-
-                <h2>Ingressos</h2>
-
-                <a class="ticket-button" href="#">
-                    COMPRAR INGRESSOS
-                </a>
-
-            </section>
-
-        </main>
+        </div>
 
     </div>
 
 </div>
-              <script>
 
-            const grid = document.querySelector('.merch-grid');
+<script>
 
-            const nextBtn = document.getElementById('nextBtn');
-            const prevBtn = document.getElementById('prevBtn');
+function login() {
 
-            const items = document.querySelectorAll('.merch-item');
+    const password =
+        document.getElementById('password').value;
 
-            let currentIndex = 0;
+    const correctPassword =
+        "cartas";
 
-            function updateCarousel() {
+    if(password === correctPassword) {
 
-                const itemWidth =
-                    items[0].offsetWidth + 20;
+        sessionStorage.setItem(
+    "accessGranted",
+    "true"
+);
 
-                grid.style.transform =
-                    `translateX(-${currentIndex * itemWidth}px)`;
+        window.location.href =
+            "ep.html";
+    } else {
 
-            }
+        document.getElementById(
+            'errorMessage'
+        ).style.display = 'block';
 
-            /* NEXT */
+    }
 
-            nextBtn.addEventListener('click', () => {
+}
 
-                currentIndex++;
+/* ENTER PRA LOGIN */
 
-                /* LOOP */
+document.addEventListener('keydown', function(event) {
 
-                if(currentIndex > items.length - 3) {
+    if(event.key === 'Enter') {
 
-                    currentIndex = 0;
+        login();
 
-                }
+    }
 
-                updateCarousel();
+});
 
-            });
+</script>
 
-            /* PREV */
-
-            prevBtn.addEventListener('click', () => {
-
-                currentIndex--;
-
-                /* LOOP */
-
-                if(currentIndex < 0) {
-
-                    currentIndex = items.length - 3;
-
-                }
-
-                updateCarousel();
-
-            });
-
-            window.addEventListener('resize', updateCarousel);
-
-            </script>
 </body>
+
 </html>

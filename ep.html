@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jambu.zip</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="container">
+
+    <header>
+        <img class="logo" src="./imgs/Lettering jambu (1).png" alt="Jambu">
+
+        <p>otimizado para internet explorer 4.0</p>
+    </header>
+
+    <div id="layout">
+
+        <!-- SIDEBAR -->
+        <aside id="sidebar">
+
+            <div class="mini-window">
+
+                <div class="mini-window-header">
+                    <span>REDES_SOCIAIS.EXE</span>
+                </div>
+
+                <div class="mini-window-content">
+
+                    <a class="social-link" href="https://www.instagram.com/oficialjambu/" target="_blank">Instagram</a>
+                    <a class="social-link" href="https://open.spotify.com/intl-pt/artist/5cKYzOJ8HSM7eKSP3FkvVX" target="_blank">Spotify</a>
+                    <a class="social-link" href="https://www.youtube.com/@Jambuoficial" target="_blank">YouTube</a>
+                    <a class="social-link" href="https://www.tiktok.com/@oficialjambu" target="_blank">TikTok</a>
+
+                </div>
+
+            </div>
+
+            <div class="mini-window">
+
+                <div class="mini-window-header">
+                    <span>NOVIDADES</span>
+                </div>
+
+                <div class="mini-window-content">
+
+                    <img src="./imgs/CAPA EP CARTAS QUE ESCREVI ENQUANTO SONHAVA.jpg"
+                         alt="EP"
+                         style="width:100%; margin-bottom:10px; border:2px inset #808080;">
+
+                    <p class="blink">● NOVO EP EM BREVE</p>
+
+                    <p>"Cartas que escrevi enquanto sonhava" estará disponível no dia 22 de Maio.</p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <!-- CONTENT -->
+        <main id="content">
+
+            <section class="window">
+
+                <div class="window-header">
+                    <span>Cartas_que_escrevi_enquanto_sonhava.zip</span>
+                </div>
+
+                <div class="window-content">
+
+                    <div class="music-player">
+                        <p>faixa_01 - Me Deixe Estar</p>
+                        <audio controls>
+                            <source src="./audio/01 JMB_MeDeixeEstar_MASTER.mp3.mpeg" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <div class="music-player">
+                        <p>faixa_02 - Desculpa</p>
+                        <audio controls>
+                            <source src="./audio/04 JMB_Desculpa_MASTER.mp3.mpeg" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <div class="music-player">
+                        <p>faixa_03 - Invisível</p>
+                        <audio controls>
+                            <source src="./audio/03 JMB_Invisível_Master.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <div class="music-player">
+                        <p>faixa_04 - Desconectou</p>
+                        <audio controls>
+                            <source src="./audio/02 JMB_Desconectou_MASTER.mp3.mpeg" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <div class="music-player">
+                        <p>faixa_05 - Carne e Osso</p>
+                        <audio controls>
+                            <source src="./audio/05 JMB_VejaVoce_MASTER.mp3.mpeg" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script>
+/* LOGIN CHECK */
+if (sessionStorage.getItem("accessGranted") !== "true") {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
