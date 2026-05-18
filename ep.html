@@ -106,9 +106,7 @@
                 Você é parte fundamental disso tudo<br><br>
 
                 compartilhe o EP antes e após o lançamento<br>
-                "Cartas que escrevi enquanto sonhava"<br><br>
-
-                leve nosso som mais longe 💿
+                "Cartas que escrevi enquanto sonhava".<br><br>
             </p>
 
         </div>
@@ -142,36 +140,36 @@
                             <div class="audio-column">
 
                                 <div class="music-player">
-                                    <p>faixa_01 - Me Deixe Estar</p>
+                                    <p>faixa_01 - Me Deixe Estar.mp3</p>
                                     <audio controls>
                                         <source src="./audio/01 JMB_MeDeixeEstar_MASTER.mp3.mpeg" type="audio/mpeg">
                                     </audio>
                                 </div>
 
                                 <div class="music-player">
-                                    <p>faixa_02 - Desculpa</p>
+                                    <p>faixa_02 - Desculpa.mp3</p>
                                     <audio controls>
                                         <source src="./audio/04 JMB_Desculpa_MASTER.mp3.mpeg" type="audio/mpeg">
                                     </audio>
                                 </div>
 
                                 <div class="music-player">
-                                    <p>faixa_03 - Invisível</p>
-                                    <audio controls>
+                                    <p>faixa_03 - preview_Invisível.mp3</p>
+                                    <audio class="previewAudio" controls>
                                         <source src="./audio/03 JMB_Invisível_Master.mp3" type="audio/mpeg">
                                     </audio>
                                 </div>
 
                                 <div class="music-player">
-                                    <p>faixa_04 - Desconectou</p>
-                                    <audio controls>
+                                    <p>faixa_04 - preview_Desconectou.mp3</p>
+                                    <audio class="previewAudio" controls>
                                         <source src="./audio/02 JMB_Desconectou_MASTER.mp3.mpeg" type="audio/mpeg">
                                     </audio>
                                 </div>
 
                                 <div class="music-player">
-                                    <p>faixa_05 - Carne e Osso</p>
-                                    <audio controls>
+                                    <p>faixa_05 - preview_Carne e Osso.mp3</p>
+                                    <audio class="previewAudio" controls>
                                         <source src="./audio/05 JMB_VejaVoce_MASTER.mp3.mpeg" type="audio/mpeg">
                                     </audio>
                                 </div>
@@ -198,7 +196,14 @@
                                         </video>
 
                                     </div>
+                                    <a
+                                    class="chat-button"
+                                    href="https://Jambu.lnk.to/Cartasqueescrevienquantosonhava"
+                                    target="_blank">
 
+                                    FAZER PRÉ-SAVE
+
+                                    </a>
                                 </div>
 
                             </div>
@@ -214,14 +219,16 @@
 
                                     <div class="window-content">
 
-                                         <iframe
-                                            width="100%"
-                                            height="400"
-                                            src="https://www.youtube.com/embed/z5eVvW4V3LY?rel=0"
-                                            title="DESCONECTOU"
-                                            frameborder="0"
-                                            allowfullscreen>
-                                        </iframe>
+                                         <video
+                                                class="clip-preview"
+                                                controls
+                                                preload="metadata">
+
+                                                <source
+                                                    src="./imgs/teaser_desconectou.mp4"
+                                                    type="video/mp4">
+
+                                            </video>
 
                                     </div>
 
@@ -340,6 +347,7 @@
                     <source src="./audio/boot-sound.mp3" type="audio/mpeg">
                 </audio>
 <script>
+
 /* LOGIN CHECK */
 if (sessionStorage.getItem("accessGranted") !== "true") {
     window.location.href = "index.html";
@@ -367,6 +375,31 @@ window.addEventListener("load", () => {
     }
 
 });
+
+const players =
+    document.querySelectorAll(".previewAudio");
+
+players.forEach(player => {
+
+    player.addEventListener(
+        "timeupdate",
+        () => {
+
+            if(player.currentTime >= 30) {
+
+                player.pause();
+
+                player.currentTime = 0;
+
+            }
+
+        }
+    );
+
+});
+
+
+
 </script>
 </body>
 </html>

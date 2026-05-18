@@ -483,10 +483,6 @@ header {
         flex-direction: column;
     }
 }
-iframe {
-    border: 2px inset #808080;
-    background: black;
-}
 
 /*VIDEOCLIPE*/
 
@@ -494,7 +490,15 @@ video {
     border: 1px inset #808080;
     background: black;
 }
+.clip-preview {
+    width: 100%;
 
+    border: 2px inset #808080;
+
+    background: black;
+
+    display: block;
+}
 /*POPUP LOGIN - EP*/
 .popup {
     position: fixed;
